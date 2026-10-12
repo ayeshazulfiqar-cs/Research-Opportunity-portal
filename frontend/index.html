@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research Opportunity Portal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <h1>Research Opportunity Portal</h1>
+        <p class="tagline">Every open research position, in one place.</p>
+      </div>
+      <button type="button" id="btn-new" class="btn btn-primary">Post opportunity</button>
+    </div>
+  </header>
+
+  <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
+
+  <main class="layout">
+    <section class="list-pane" aria-labelledby="list-heading">
+      <div class="list-head">
+        <h2 id="list-heading">Opportunities <span id="count" class="count"></span></h2>
+        <div class="filters" role="group" aria-label="Filter by status">
+          <button type="button" class="chip is-active" data-filter="All">All</button>
+          <button type="button" class="chip" data-filter="Open">Open</button>
+          <button type="button" class="chip" data-filter="Closed">Closed</button>
+        </div>
+      </div>
+      <div id="list" class="list"></div>
+    </section>
+
+    <section id="panel" class="panel" aria-live="polite" tabindex="-1"></section>
+  </main>
+
+  <dialog id="confirm-dialog" class="dialog">
+    <form method="dialog">
+      <h3 id="confirm-title">Delete this opportunity?</h3>
+      <p id="confirm-text"></p>
+      <div class="dialog-actions">
+        <button type="submit" value="cancel" class="btn">Keep it</button>
+        <button type="submit" value="confirm" class="btn btn-danger">Delete opportunity</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
