@@ -27,7 +27,6 @@ research-opportunity-portal/
 │   └── script.js
 ├── database/schema.sql    # creates the database and table
 ├── postman/               # exported Postman collection
-├── docs/DEMO_SCRIPT.md    # plan for the one-minute video
 └── README.md
 ```
 
