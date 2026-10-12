@@ -4,48 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Research Opportunity Portal</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <div>
-        <h1>Research Opportunity Portal</h1>
-        <p class="tagline">Every open research position, in one place.</p>
-      </div>
-      <button type="button" id="btn-new" class="btn btn-primary">Post opportunity</button>
-    </div>
-  </header>
+  <h1>Research Opportunity Portal</h1>
+  <div id="message"></div>
 
-  <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
+  <button id="newBtn">+ New opportunity</button>
 
-  <main class="layout">
-    <section class="list-pane" aria-labelledby="list-heading">
-      <div class="list-head">
-        <h2 id="list-heading">Opportunities <span id="count" class="count"></span></h2>
-        <div class="filters" role="group" aria-label="Filter by status">
-          <button type="button" class="chip is-active" data-filter="All">All</button>
-          <button type="button" class="chip" data-filter="Open">Open</button>
-          <button type="button" class="chip" data-filter="Closed">Closed</button>
-        </div>
-      </div>
-      <div id="list" class="list"></div>
-    </section>
+  <!-- Form (create and update) -->
+  <form id="form" class="box" hidden novalidate>
+    <h2 id="formTitle">New opportunity</h2>
+    <div id="formErrors"></div>
 
-    <section id="panel" class="panel" aria-live="polite" tabindex="-1"></section>
-  </main>
+    <label>Research title *</label>
+    <input id="title">
+    <label>Research description *</label>
+    <textarea id="description" rows="3"></textarea>
+    <label>Research area *</label>
+    <input id="research_area">
+    <label>Faculty member's name *</label>
+    <input id="faculty_name">
+    <label>Department *</label>
+    <input id="department">
+    <label>Required skills *</label>
+    <input id="required_skills" placeholder="e.g. Python, Statistics">
+    <label>Available positions *</label>
+    <input id="available_positions" type="number" min="1">
+    <label>Application deadline *</label>
+    <input id="application_deadline" type="date">
+    <label>Status</label>
+    <select id="status"><option>Open</option><option>Closed</option></select>
 
-  <dialog id="confirm-dialog" class="dialog">
-    <form method="dialog">
-      <h3 id="confirm-title">Delete this opportunity?</h3>
-      <p id="confirm-text"></p>
-      <div class="dialog-actions">
-        <button type="submit" value="cancel" class="btn">Keep it</button>
-        <button type="submit" value="confirm" class="btn btn-danger">Delete opportunity</button>
-      </div>
-    </form>
-  </dialog>
+    <button type="submit">Save</button>
+    <button type="button" id="cancelBtn">Cancel</button>
+  </form>
 
-  <script src="app.js"></script>
+  <!-- Details of the selected opportunity -->
+  <div id="details" class="box" hidden></div>
+
+  <!-- All opportunities -->
+  <h2>All opportunities</h2>
+  <table>
+    <thead>
+      <tr><th>Title</th><th>Faculty</th><th>Deadline</th><th>Status</th><th></th></tr>
+    </thead>
+    <tbody id="list"></tbody>
+  </table>
+
+  <script src="script.js"></script>
 </body>
 </html>
