@@ -2,8 +2,8 @@
 
 A simple web app where faculty members post, view, update, close and delete research opportunities in one place.
 
-- **GitHub Repository:** https://github.com/YOUR-USERNAME/research-opportunity-portal
-- **Student:** NAME, P24-0000, CLASS
+- **GitHub Repository:** https://github.com/ayeshazulfiqar-cs/Research-Opportunity-portal
+- **Student:** AYESHA ZULFIQAR, 24P-0663, BS(CS)
 - **Demo video:** (add link here if it is not inside the ZIP)
 
 ## Technologies
